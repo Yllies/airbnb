@@ -107,7 +107,7 @@ export default function SignUpScreen({ setToken }) {
           navigation.navigate("Signin");
         }}
       >
-        <Text>Already have an account ? Sign in</Text>
+        <Text>Already have an account ? Sign in !</Text>
       </TouchableOpacity>
     </KeyboardAwareScrollView>
   );
