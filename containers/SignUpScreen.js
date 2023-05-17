@@ -104,7 +104,7 @@ export default function SignUpScreen({ setToken }) {
       </TouchableOpacity>
       <TouchableOpacity
         onPress={() => {
-          navigation.navigate("Signin");
+          navigation.navigate("SignIn");
         }}
       >
         <Text>Already have an account ? Sign in !</Text>
