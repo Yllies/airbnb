@@ -1,7 +1,14 @@
-import { Text, TextInput, View, TouchableOpacity } from "react-native";
+import {
+  Text,
+  TextInput,
+  View,
+  TouchableOpacity,
+  Image,
+  StyleSheet,
+} from "react-native";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { useState } from "react";
-import { StyleSheet } from "react-native-web";
+import { Constants } from "expo-constants";
 import axios from "axios";
 import { useNavigation } from "@react-navigation/core";
 
@@ -44,7 +51,11 @@ export default function SignUpScreen({ setToken }) {
   };
 
   return (
-    <KeyboardAwareScrollView>
+    <KeyboardAwareScrollView
+      contentContainerStyle={styles.contentContainer}
+      style={styles.container}
+    >
+      <Image source={require("../assets/logo.png")} style={styles.logo} />
       <Text>Sign up</Text>
       <TextInput
         placeholder="Email"
@@ -107,15 +118,25 @@ export default function SignUpScreen({ setToken }) {
           navigation.navigate("SignIn");
         }}
       >
-        <Text>Already have an account ? Sign in !</Text>
+        <Text>Already have an account ? Sign in</Text>
       </TouchableOpacity>
     </KeyboardAwareScrollView>
   );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    paddingTop: Constants.statusBarHeight,
+  },
+  contentContainer: {
+    alignItems: "center",
+  },
   input: {
     borderWidth: 1,
     marginVertical: 15,
+  },
+  logo: {
+    width: 100,
+    height: 100,
   },
 });
