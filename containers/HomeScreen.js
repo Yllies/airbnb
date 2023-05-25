@@ -2,6 +2,7 @@ import { useNavigation } from "@react-navigation/core";
 import { Button, Text, View } from "react-native";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { ActivityIndicator } from "react-native-paper";
 export default function HomeScreen() {
   const navigation = useNavigation();
   const [data, setData] = useState({});
@@ -23,7 +24,7 @@ export default function HomeScreen() {
     fetchData();
   }, []);
   return isLoading ? (
-    <Text>Loading ...</Text>
+    <ActivityIndicator />
   ) : (
     <View>
       <Text>Welcome home!</Text>
