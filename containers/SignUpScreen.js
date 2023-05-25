@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { useState } from "react";
-import { Constants } from "expo-constants";
+import Constants from "expo-constants";
 import axios from "axios";
 import { useNavigation } from "@react-navigation/core";
 
